@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <title>Add Your Recipe!</title>
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url(foodimg.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 40%;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            justify-content: center;
+            align-self: center;
+            margin: 50px auto; /* Center the container horizontally */
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            background-color: #4CAF50;
+            width: 100%;
+            color: white;
+            z-index: 10;
+            margin-top: 100px;
+            padding: 20px 0;
+            position: absolute;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #367c39;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px 0;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 48px;
+        }
+
+        header nav ul {
+            list-style-type: none;
+            margin: auto;
+            padding: 10px;
+        }
+
+        header nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        header nav ul li:last-child {
+            margin-right: 0;
+        }
+
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="hcontainer">
+            <h1>BudgetBytes</h1>
+            <nav>
+                <ul>
+                    <li><a href="/submission">Recipe Submission</a></li>
+                    <li><a href="/recipes">View Recipes</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="/">Home</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Content Section -->
+    <div class="container">
+        <h1>Add Your Recipe!</h1>
+        <form action="/addRecipe" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="recipeName">Recipe Name:</label>
+                <input type="text" id="recipeName" name="recipeName" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="ingredients">Ingredients:</label>
+                <textarea id="ingredients" name="ingredients" required></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="instructions">Instructions:</label>
+                <textarea id="instructions" name="instructions" required></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="picture">Recipe Picture:</label>
+                <input type="file" id="picture" name="picture" accept="image/*" required>
+            </div>
+            
+            <button type="submit">Add Recipe</button>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 BudgetBytes. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+

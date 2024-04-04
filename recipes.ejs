@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes</title>
+    <link rel=“stylesheet” href=“css/main.css” />
+</head>
+<style>
+    body {
+            font-family: Arial, sans-serif;
+            background-color: #b3ef7c;
+            margin: 0;
+            padding: 0;
+            display: block;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+    }
+
+    .container {
+        max-width: 40%;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #367c39;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #fff;
+    }
+
+    .recipe {
+        border: 1px solid #ddd;
+        background-color: antiquewhite;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 20px;
+        overflow: hidden;
+    }
+
+    .recipe img {
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin-bottom: 10px;
+    }
+
+    .recipe h2 {
+        text-align: center;
+        margin-bottom: 10px;
+        color: #333;
+    }
+
+    .recipe p {
+        margin-bottom: 10px;
+        color: #666;
+    }
+    header {
+        background-color: #4CAF50;
+        color: white;
+        padding: 20px 0;
+    }
+
+    footer {
+        background-color: #4CAF50;
+        width: 100%;
+        color: white;
+        z-index: 10;
+        margin-top: 40px;
+        padding: 20px 0;
+        position: absolute;
+    }
+
+    header h1 {
+        margin: 0;
+        font-size: 48px;
+    }
+
+    header nav ul {
+        list-style-type: none;
+        margin: auto;
+        padding: 10px;
+    }
+
+    header nav ul li {
+        display: inline;
+        margin-right: 20px;
+    }
+
+    header nav ul li:last-child {
+        margin-right: 0;
+    }
+
+    header nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    header nav ul li a:hover {
+        /* text-decoration: underline; */
+    }
+
+
+</style>
+<body>
+    <header>
+        <div class="hcontainer">
+            <h1>BudgetBytes</h1>
+            <nav>
+                <ul>
+                    <li><a href="/submission">Recipe Submission</a></li>
+                    <li><a href="/recipes">View Recipes</a></li>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/">Home</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <h1>Recipes</h1>
+        <% recipes.forEach(recipe => { %>
+            <div class="recipe">
+                <h2>Recipe: <%= recipe.recipeName %></h2>
+                <p>Ingredients: <%= recipe.ingredients %></p>
+                <p>Instructions: <%= recipe.instructions %></p>
+                <img src="data:image/jpeg;base64,<%= recipe.picture.toString('base64') %>" alt="<%= recipe.recipeName %>" />
+            </div>
+        <% }); %>
+    </div>
+    <footer>
+        <p>&copy; 2024 BudgetBytes. All rights reserved.</p>
+    </footer>
+</body>
+</html>
